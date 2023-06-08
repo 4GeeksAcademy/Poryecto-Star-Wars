@@ -1,7 +1,7 @@
+
 const URL = 'https://swapi.tech/api';
 
-export const getPeople = () => {
-
+const getPeople = () => {
   return fetch(`${URL}/people`)
     .then(response => response.json())
     .then(data => data.results)
@@ -11,24 +11,28 @@ export const getPeople = () => {
     });
 };
 
-export const getVehicles = () => {
+const getVehicles = () => {
+  return fetch(`${URL}/vehicles`)
+    .then(response => response.json())
+    .then(data => data.results)
+    .catch(error => {
+      console.error('Error:', error);
+      return [];
+    });
+};
 
-    return fetch(`${URL}/vehicles`)
-      .then(response => response.json())
-      .then(data => data.results)
-      .catch(error => {
-        console.error('Error:', error);
-        return [];
-      });
-  };
+const getPlanets = () => {
+  return fetch(`${URL}/planets`)
+    .then(response => response.json())
+    .then(data => data.results)
+    .catch(error => {
+      console.error('Error:', error);
+      return [];
+    });
+};
 
-  export const getPlanets = () => {
-
-    return fetch(`${URL}/planets`)
-      .then(response => response.json())
-      .then(data => data.results)
-      .catch(error => {
-        console.error('Error:', error);
-        return [];
-      });
-  };
+export default {
+  getPeople,
+  getVehicles,
+  getPlanets
+};
