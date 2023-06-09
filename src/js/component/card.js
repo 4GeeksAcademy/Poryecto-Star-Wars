@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect, useContext } from "react";
-import { Boton } from "./Boton";
 
-const Card = () => {
+
+export const Card = () => {
     return (
 
        
@@ -10,4 +10,3 @@ const Card = () => {
     )
 }
 
-export default Card;
