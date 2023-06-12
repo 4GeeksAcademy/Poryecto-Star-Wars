@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect, useContext } from "react";
 
-const Card = (props) => {
+
+export const Card = () => {
     return (
-        <p>hola </p>
+
+       
+        
     )
 }
 
-export default Card;
