@@ -1,6 +1,11 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+
+			people: null,
+			vehicles: null,
+			planets: null,
+
 			demo: [
 				{
 					title: "FIRST",
@@ -19,9 +24,42 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 
+			getPeople: () => {
+
+				return fetch(`${URL}/people`)
+				  .then(response => response.json())
+				  .then(data => setStore({people: data.results}))
+				  .catch(error => {
+					console.error('Error:', error);
+					
+				  });
+			  },
+
+			  getVehicles: () => {
+
+				return fetch(`${URL}/vehicles`)
+				  .then(response => response.json())
+				  .then(data => setStore({vehicles: data.results}))
+				  .catch(error => {
+					console.error('Error:', error);
+					
+				  });
+			  },
+
+			  getPlanets: () => {
+
+				return fetch(`${URL}/planets`)
+				  .then(response => response.json())
+				  .then(data => setStore({planets: data.results}))
+				  .catch(error => {
+					console.error('Error:', error);
+					
+				  });
+			  },
+
       addFavorite: (favorite) => {
        const store = getStore();
-       setStore({...store, favorites: [...store.favorites, favorite]});
+       setStore({favorites: [...store.favorites, favorite]});
       },
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {

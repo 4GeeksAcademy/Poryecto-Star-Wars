@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 import { Home } from './views/home';
+import 
 
 
 import injectContext from "./store/appContext";
@@ -21,9 +22,9 @@ const Layout = () => {
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home />} />
-						{/* <Route path="/people/:theid" element={<People />} />
+						 <Route path="/people/:theid" element={<People />} />
 						<Route path="/planets/:theid" element={<Planets />} />
-						<Route path="./vehicles/:theid" element = {<Vehicles />}/> */}
+						<Route path="./vehicles/:theid" element = {<Vehicles />}/>
 						<Route path="*" element={<h1>Not found!</h1 >} />
 					</Routes>
 					<Footer />
